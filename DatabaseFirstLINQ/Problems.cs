@@ -16,38 +16,37 @@ namespace DatabaseFirstLINQ
         public void RunLINQQueries()
         {
             ProblemOne();
-//            //ProblemTwo();
-//            //ProblemThree();
-//            //ProblemFour();
-//            //ProblemFive();
-//            //ProblemSix();
-//            //ProblemSeven();
-//            //ProblemEight();
-//            //ProblemNine();
-//            //ProblemTen();
-//            //ProblemEleven();
-//            //ProblemTwelve();
-//            //ProblemThirteen();
-//            //ProblemFourteen();
-//            //ProblemFifteen();
-//            //ProblemSixteen();
-//            //ProblemSeventeen();
-//            //ProblemEighteen();
-//            //ProblemNineteen();
-//            //ProblemTwenty();
+            //ProblemTwo();
+            //ProblemThree();
+            //ProblemFour();
+            //ProblemFive();
+            //ProblemSix();
+            //ProblemSeven();
+            //ProblemEight();
+            //ProblemNine();
+            //ProblemTen();
+            //ProblemEleven();
+            //ProblemTwelve();
+            //ProblemThirteen();
+            //ProblemFourteen();
+            //ProblemFifteen();
+            //ProblemSixteen();
+            //ProblemSeventeen();
+            //ProblemEighteen();
+            //ProblemNineteen();
+            //ProblemTwenty();
         }
 
         // <><><><><><><><> R Actions (Read) <><><><><><><><><>
         private void ProblemOne()
         {
             // Write a LINQ query that returns the number of users in the Users table.
-             //HINT: .ToList().Count
-             var users = _context.Users;
-            Console.WriteLine(users.ToList().Count)
-
+            // HINT: .ToList().Count
+            var users = _context.Users;
+            Console.WriteLine(users.ToList().Count);
         }
 
-       private void ProblemTwo()
+        private void ProblemTwo()
         {
             // Write a LINQ query that retrieves the users from the User tables then print each user's email to the console.
             var users = _context.Users;
@@ -66,7 +65,8 @@ namespace DatabaseFirstLINQ
 
         }
 
-       private void ProblemFour()        {
+        private void ProblemFour()
+        {
             // Write a LINQ query that gets each product that contains an "s" in the products name.
             // Then print the name of each product from the above query to the console.
 
@@ -114,7 +114,7 @@ namespace DatabaseFirstLINQ
 
         }
 
-       private void ProblemTen()
+        private void ProblemTen()
         {
             // Write a LINQ query that retreives all of the products in the shopping cart of users who have the role of "Employee".
             // Then print the user's email as well as the product's name, price, and quantity to the console.
@@ -128,7 +128,7 @@ namespace DatabaseFirstLINQ
         private void ProblemEleven()
         {
             // Create a new User object and add that user to the Users table using LINQ.
-           User newUser = new User()
+            User newUser = new User()
             {
                 Email = "david@gmail.com",
                 Password = "DavidsPass123"
@@ -188,7 +188,7 @@ namespace DatabaseFirstLINQ
             var userRole = _context.UserRoles.Where(ur => ur.User.Email == "mike@gmail.com").SingleOrDefault();
             _context.UserRoles.Remove(userRole);
             UserRole newUserRole = new UserRole()
-           {
+            {
                 UserId = _context.Users.Where(u => u.Email == "mike@gmail.com").Select(u => u.Id).SingleOrDefault(),
                 RoleId = _context.Roles.Where(r => r.RoleName == "Employee").Select(r => r.Id).SingleOrDefault()
             };
@@ -242,14 +242,14 @@ namespace DatabaseFirstLINQ
         {
             // 1. Create functionality for a user to sign in via the console
             // 2. If the user succesfully signs in
-                // a. Give them a menu where they perform the following actions within the console
-                    // View the products in their shopping cart
-                    // View all products in the Products table
-                    // Add a product to the shopping cart (incrementing quantity if that product is already in their shopping cart)
-                    // Remove a product from their shopping cart
+            // a. Give them a menu where they perform the following actions within the console
+            // View the products in their shopping cart
+            // View all products in the Products table
+            // Add a product to the shopping cart (incrementing quantity if that product is already in their shopping cart)
+            // Remove a product from their shopping cart
             // 3. If the user does not succesfully sing in
-                // a. Display "Invalid Email or Password"
-                // b. Re-prompt the user for credentials
+            // a. Display "Invalid Email or Password"
+            // b. Re-prompt the user for credentials
 
         }
 
