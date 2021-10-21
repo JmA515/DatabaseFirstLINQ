@@ -1,0 +1,2 @@
+# DatabaseFirstLINQ
+LINQ queries 
