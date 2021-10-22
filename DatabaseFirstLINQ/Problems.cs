@@ -29,8 +29,8 @@ namespace DatabaseFirstLINQ
             //ProblemTwelve();
             //ProblemThirteen();
             //ProblemFourteen();
-            ProblemFifteen();
-            //ProblemSixteen();
+            //ProblemFifteen();
+            ProblemSixteen();
             //ProblemSeventeen();
             //ProblemEighteen();
             //ProblemNineteen();
@@ -246,7 +246,6 @@ namespace DatabaseFirstLINQ
             };
             _context.ShoppingCarts.Add(newProduct);
             _context.SaveChanges();
-
         }
 
         // <><> U Actions (Update) <><>
@@ -263,7 +262,10 @@ namespace DatabaseFirstLINQ
         private void ProblemSixteen()
         {
             // Update the price of the product you created to something different using LINQ.
-
+            var item = _context.Products.Where(i => i.Name == "anime figma").SingleOrDefault();
+            item.Price = 155;
+            _context.Products.Update(item);
+            _context.SaveChanges();
         }
 
         private void ProblemSeventeen()
